@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:00:23 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/03 16:08:27 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:01:50 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ static void	stack_maker(t_list **stack, int ac, char **av)
 		ft_free(args);
 }
 
-/*
-function that gets the nb of args and do the right sorting algo pousse_echange
-*/
+void	push_swap(t_list stack_a, t_list stack_b)
+{
+	
+}
 
 int	main(int ac, char **av)
 {
