@@ -2,8 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap.a
 
-SRC = push_swap.c parsing.c \
-#add srcs
+SRC = main.c index.c parsing.c simple_sort.c utils.c utils_free.c
 
 RM = rm -f
 OBJ = $(SRC:%.c=%.o)
