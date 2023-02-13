@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:35:52 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/03 14:20:42 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:24:50 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,17 @@ void	freestack(t_list **stack)
 		free(tmp);
 	}
 	free(stack);
+}
+
+t_list	*ft_lstnew(int value)
+{
+	t_list	*new;
+
+	new = (t_list *) malloc(sizeof(*new));
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->index = -1;
+	new->next = NULL;
+	return (new);
 }
