@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:01:08 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/03 15:47:28 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:16:16 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	ft_error(void);
 void	ft_free(char **str);
 void	ft_argcheck(int ac, char **av);
 void	get_index(t_list **stack);
+t_list	ft_lstnew(int value);
+int		get_distance(t_list **stack, int index);
+void	simple_sort(t_list **stack_a, t_list **stack_b);
 
 
 
