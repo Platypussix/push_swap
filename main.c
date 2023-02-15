@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:00:23 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/13 12:19:56 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/15 16:41:49 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
-	else
-		big_sort(stack_a, stack_b);
+//	else
+//		big_sort(stack_a, stack_b);
 }
 
 int	main(int ac, char **av)
@@ -60,12 +60,12 @@ int	main(int ac, char **av)
 	stack_maker(stack_a, ac, av);
 	if (is_sorted(stack_a))
 	{
-		free_stack(stack_a);
-		free_stack(stack_b);
+		freestack(stack_a);
+		freestack(stack_b);
 		return (0);
 	}
 	push_swap(stack_a, stack_b);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	freestack(stack_a);
+	freestack(stack_b);
 	return (0);
 }

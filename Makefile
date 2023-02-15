@@ -9,11 +9,9 @@ OBJ = $(SRC:%.c=%.o)
 all = $(NAME)
 
 $(NAME): $(OBJ)
-		@make -C ./libft
-		$(CC) $(CFLAGS) $(OBJ) ./libft/libft.a -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) $(NAME)
 
 clean:
-		@make -C ./libft fclean
 		$(RM) $(OBJ)
 
 fclean: clean
