@@ -1,8 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/16 14:19:43 by amedioun          #+#    #+#              #
+#    Updated: 2023/02/16 14:20:26 by amedioun         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap.a
 
-SRC = main.c index.c parsing.c simple_sort.c utils.c utils_free.c
+SRC = main.c index.c parsing.c simple_sort.c utils.c utils_free.c utils_lists \
+	ft_lib.c
 
 RM = rm -f
 OBJ = $(SRC:%.c=%.o)

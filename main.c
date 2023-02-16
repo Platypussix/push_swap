@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:00:23 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/15 16:41:49 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:21:30 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	stack_maker(t_list **stack, int ac, char **av)
 {
+	t_list *newstack;
 	int		i;
 	char	**args;
-	t_list	*new_stack;
 
 	i = 0;
 	if (ac == 2)
@@ -28,8 +28,8 @@ static void	stack_maker(t_list **stack, int ac, char **av)
 	}
 	while (args[i])
 	{
-		new_stack = ft_lstnew(ft_atoi(args[i]));
-		ft_lstadd_back(stack, new_stack);
+		newstack = ft_lstnew(ft_atoi(args[i]));
+		ft_lstadd_back(stack, newstack);
 		i++;
 	}
 	get_index(stack);
@@ -37,7 +37,7 @@ static void	stack_maker(t_list **stack, int ac, char **av)
 		ft_free(args);
 }
 
-void	push_swap(t_list **stack_a, t_list **stack_b)
+static void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
