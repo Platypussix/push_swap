@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:35:59 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 17:21:33 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:41:04 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_argcheck(int ac, char **av)
 			ft_error();
 		if (tmp < -2147483648 || tmp > 2147483647)
 			ft_error();
-		if (!ft_checkdouble(tmp, args, i))
+		if (ft_checkdouble(tmp, args, i))
 			ft_error();
 		i++;
 	}
