@@ -1,58 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lib.c.c                                         :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 16:13:14 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/15 16:21:56 by amedioun         ###   ########.fr       */
+/*   Created: 2023/02/19 15:34:42 by amedioun          #+#    #+#             */
+/*   Updated: 2023/02/19 16:23:11 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "../push_swap.h"
 
-
-int		ft_atoi(const char *str)
+static int	count_words(char *str, char c)
 {
-	int neg;
-	int i;
-	int num;
-
-	i = 0;
-	neg = 1;
-	num = 0;
-	while (str[i] == ' ' || str[i] >= 9 && str[i] <= 13)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			neg *= -1;
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		num *= 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * neg);
-}
-
-int ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str)
-		i++;
-	return (i);
-}
-
-
-static int	count_words(const char *str, char c)
-{
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -70,7 +33,7 @@ static int	count_words(const char *str, char c)
 	return (i);
 }
 
-static char	*word_dup(const char *str, int start, int finish)
+static char	*word_dup(char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
@@ -83,14 +46,15 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	int		index;
 	char	**split;
 
-	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!split || !s)
 		return (0);
 	i = 0;
 	j = 0;

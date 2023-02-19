@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:20:22 by amedioun          #+#    #+#             */
-/*   Updated: 2023/01/31 16:20:37 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:19:00 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ int	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_a, stack_b) == (-1))
 		return (-1);
-	ft_putendl_fd("pa", 1);
+	write(1, "pa", 2);
+	return (0);
 }
 
 int	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_b, stack_a) == (-1))
 		return (-1);
-	ft_putendl_fd("pb", 1);
+	write(1, "pb", 2);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:00:23 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/16 14:21:30 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:24:19 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	stack_maker(t_list **stack, int ac, char **av)
 {
-	t_list *newstack;
+	t_list	*newstack;
 	int		i;
 	char	**args;
 

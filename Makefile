@@ -6,23 +6,22 @@
 #    By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 14:19:43 by amedioun          #+#    #+#              #
-#    Updated: 2023/02/16 14:20:26 by amedioun         ###   ########.fr        #
+#    Updated: 2023/02/19 17:15:40 by amedioun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = push_swap.a
+RM = rm -rf
 
-SRC = main.c index.c parsing.c simple_sort.c utils.c utils_free.c utils_lists \
-	ft_lib.c
-
-RM = rm -f
+SRC = $(wildcard */*.c *.c)
 OBJ = $(SRC:%.c=%.o)
+
 all = $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) $(NAME)
+		$(CC) $(CFLAGS) $(OBJ)
 
 clean:
 		$(RM) $(OBJ)

@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_free.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 16:06:47 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/13 16:07:29 by amedioun         ###   ########.fr       */
+/*   Created: 2023/01/26 15:35:52 by amedioun          #+#    #+#             */
+/*   Updated: 2023/02/19 16:26:02 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_free(char **str)
+void	ft_error(void)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	while (i >= 0)
-		free(str[i--]);
+	write(2, "Error\n", 6);
+	exit(0);
 }
 
-void	freestack(t_list **stack)
+int	is_sorted(t_list **stack)
+{
+	t_list	*check;
+
+	check = *stack;
+	while (check && check->next)
+	{
+		if (check->value > check->next->value)
+			return (0);
+		check = check->next;
+	}
+	return (1);
+}
+
+int	get_distance(t_list **stack, int index)
 {
 	t_list	*head;
-	t_list	*tmp;
+	int		distance;
 
+	distance = 0;
 	head = *stack;
 	while (head)
 	{
-		tmp = head;
+		if (head->index == index)
+			break ;
+		distance++;
 		head = head->next;
-		free(tmp);
 	}
-	free(stack);
+	return (distance);
 }

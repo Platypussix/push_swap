@@ -6,11 +6,11 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:39:03 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/15 15:46:34 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:38:15 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_list	*ft_lstnew(int value)
 {

@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:20:50 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/13 16:37:43 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:05:42 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,58 @@ static int	get_min(t_list **stack, int nb)
 			min = head->index;
 		return (min);
 	}
+	return (0);
 }
+
+static void	sort_3(t_list **stack)
+{
+	t_list	*head;
+	int		min;
+	int		next_min;
+
+	head = *stack;
+	min = get_min(stack, -1);
+	next_min = get_min(stack, min);
+	if (is_sorted(stack))
+		return ;
+	if (head->index == min && head->next->index != next_min)
+	{
+		ra(stack);
+		sa(stack);
+		rra(stack);
+	}
+	if (head->index == next_min)
+	{
+		if (head->next->index == min)
+			sa(stack);
+		else
+			rra(stack);
+	}
+}
+
+static void	sort_4(t_list **stack_a, t_list **stack_b)
+{
+	int	distance;
+
+	if (is_sorted(stack_a))
+		return ;
+	distance = get_distance(stack_a, get_min(stack_a, -1));
+	if (distance == 1)
+		ra(stack_a);
+	else if (distance == 2)
+	{
+		ra(stack_a);
+		ra(stack_a);
+	}
+	else if (distance == 3)
+		rra(stack_a);
+	if (is_sorted(stack_a))
+		return ;
+	pb(stack_a, stack_b);
+	sort_3(stack_a);
+	pa(stack_a, stack_b);
+}
+
 
 static void	sort_5(t_list **stack_a, t_list **stack_b)
 {
@@ -54,55 +105,6 @@ static void	sort_5(t_list **stack_a, t_list **stack_b)
 	pb(stack_a, stack_b);
 	sort_4(stack_a, stack_b);
 	pa(stack_a, stack_b);
-}
-
-static void	sort_4(t_list **stack_a, t_list **stack_b)
-{
-	int	distance;
-
-	if (is_sorted(stack_a))
-		return ;
-	distance = get_disance(stack_a, get_min(stack_a, -1));
-	if (distance == 1)
-		ra(stack_a);
-	else if (distance == 2)
-	{
-		ra(stack_a);
-		ra(stack_a);
-	}
-	else if (distance == 3)
-		rra(stack_a);
-	if (is_sorted(stack_a))
-		return ;
-	pb(stack_a, stack_b);
-	sort_3(stack_a);
-	pa(stack_a, stack_b);
-}
-
-static void	sort_3(t_list **stack)
-{
-	t_list	*head;
-	int		min;
-	int		next_min;
-
-	head = *stack;
-	min = get_min(stack, -1);
-	next_min = get_min(stack, min);
-	if (is_sorted(stack))
-		return ;
-	if (head->index == min && head->next->index != next_min)
-	{
-		ra(stack);
-		sa(stack);
-		rra(stack);
-	}
-	if (head->index == next_min)
-	{
-		if (head->next->index == min)
-			sa(stack);
-		else
-			rra(stack);
-	}
 }
 
 void	simple_sort(t_list **stack_a, t_list **stack_b)
