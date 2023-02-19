@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:01:08 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 17:32:01 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 17:35:16 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		get_distance(t_list **stack, int index);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(char *str);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	freestack(t_list **stack);
 int		is_sorted(t_list **stack);
 int		ft_isdigit(char g);

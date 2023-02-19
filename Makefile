@@ -6,7 +6,7 @@
 #    By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 14:19:43 by amedioun          #+#    #+#              #
-#    Updated: 2023/02/19 17:15:40 by amedioun         ###   ########.fr        #
+#    Updated: 2023/02/19 17:35:47 by amedioun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = $(SRC:%.c=%.o)
 all = $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 		$(RM) $(OBJ)
