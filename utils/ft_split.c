@@ -6,70 +6,84 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:34:42 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 16:23:11 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/19 17:32:38 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	count_words(char *str, char c)
+int	word_count(char const *s, char c)
 {
 	int	i;
-	int	trigger;
+	int	count;
 
 	i = 0;
-	trigger = 0;
-	while (*str)
+	count = 0;
+	while (s[i])
 	{
-		if (*str != c && trigger == 0)
-		{
-			trigger = 1;
-			i++;
-		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
-	}
-	return (i);
-}
-
-static char	*word_dup(char *str, int start, int finish)
-{
-	char	*word;
-	int		i;
-
-	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	while (start < finish)
-		word[i++] = str[start++];
-	word[i] = '\0';
-	return (word);
-}
-
-char	**ft_split(char *s, char c)
-{
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**split;
-
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!split || !s)
-		return (0);
-	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = word_dup(s, index, i);
-			index = -1;
-		}
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			count++;
 		i++;
 	}
-	split[j] = 0;
-	return (split);
+	return (count);
+}
+
+int	word_length(char const *s, char c)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = 0;
+	while (s[i] != c && s[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+char	**f(char const *s, char c, char **result, int words_count)
+{
+	int	i;
+	int	j;
+	int	w_len;
+
+	while (*s == c)
+		s++;
+	i = -1;
+	while (++i < words_count)
+	{
+		while (*s == c)
+			s++;
+		j = 0;
+		w_len = word_length(s, c);
+		result[i] = (char *)malloc(sizeof(char) * (w_len + 1));
+		if (!(result[i]))
+			return (NULL);
+		while (j < w_len)
+		{
+			result[i][j] = *s;
+			s++;
+			j++;
+		}
+		result[i][j] = '\0';
+	}
+	return (result);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		wcount;
+
+	if (!s)
+		return (NULL);
+	wcount = word_count(s, c);
+	result = (char **)malloc(sizeof(char *) * (wcount + 1));
+	if (!(result))
+		return (NULL);
+	result = f(s, c, result, wcount);
+	result[wcount] = NULL;
+	return (result);
 }
