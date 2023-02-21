@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:35:52 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 16:26:02 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:16:16 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_sorted(t_list **stack)
 	t_list	*check;
 
 	check = *stack;
-	while (check && check->next)
+	while (check->next->next)
 	{
 		if (check->value > check->next->value)
 			return (0);

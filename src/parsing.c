@@ -6,11 +6,11 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:35:59 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 18:41:04 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/21 09:38:38 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_checkdouble(int nb, char **args, int i)
 {

@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:37:58 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 16:19:49 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:48:41 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	rra(t_list **stack_a)
 {
 	if (reverse_rotate(stack_a) == -1)
 		return (-1);
-	write(1, "rra", 3);
+	write(1, "rra\n", 4);
 	return (0);
 }
 
@@ -47,7 +47,7 @@ int	rrb(t_list **stack_b)
 {
 	if (reverse_rotate(stack_b) == -1)
 		return (-1);
-	write(1, "rrb", 3);
+	write(1, "rrb\n", 4);
 	return (0);
 }
 
@@ -57,6 +57,6 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 		return (-1);
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	write(1, "rrr", 3);
+	write(1, "rrr\n", 4);
 	return (0);
 }

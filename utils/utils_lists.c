@@ -6,13 +6,13 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:39:03 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 15:38:15 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:32:43 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstnew(int value)
+t_list	*ft_lstnew(int value, int ac)
 {
 	t_list	*new;
 
@@ -21,6 +21,7 @@ t_list	*ft_lstnew(int value)
 		return (NULL);
 	new->value = value;
 	new->index = -1;
+	new->ac = ac;
 	new->next = NULL;
 	return (new);
 }

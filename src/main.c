@@ -6,11 +6,11 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:00:23 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 15:24:19 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:12:58 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	stack_maker(t_list **stack, int ac, char **av)
 {
@@ -28,7 +28,7 @@ static void	stack_maker(t_list **stack, int ac, char **av)
 	}
 	while (args[i])
 	{
-		newstack = ft_lstnew(ft_atoi(args[i]));
+		newstack = ft_lstnew(ft_atoi(args[i]), ac);
 		ft_lstadd_back(stack, newstack);
 		i++;
 	}

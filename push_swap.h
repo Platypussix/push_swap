@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:01:08 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 17:35:16 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:32:29 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_list
 {
 	int				value;
 	int				index;
+	int				ac;
 	struct s_list	*next;
 }				t_list;
 
@@ -36,7 +37,7 @@ int		rra(t_list **stack_a);
 int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
 
-t_list	*ft_lstnew(int value);
+t_list	*ft_lstnew(int value, int ac);
 void	ft_lstadd_front(t_list **stack, t_list *new);
 t_list	*ft_lstlast(t_list *head);
 void	ft_lstadd_back(t_list **stack, t_list *new);
