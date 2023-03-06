@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:20:50 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/21 10:55:22 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:24:59 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 	sort_3(stack_a);
 	pa(stack_a, stack_b);
 }
-
 
 static void	sort_5(t_list **stack_a, t_list **stack_b)
 {
