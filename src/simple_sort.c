@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:20:50 by amedioun          #+#    #+#             */
-/*   Updated: 2023/03/07 14:12:08 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:25:33 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,22 @@ static void	sort_3(t_list **stack)
 		sa(stack);
 		rra(stack);
 	}
-	if (head->index == next_min)
+	else if (head->index == next_min)
 	{
 		if (head->next->index == min)
 			sa(stack);
 		else
 			rra(stack);
+	}
+	else
+	{
+		if (head->next->index == min)
+			ra(stack);
+		else
+		{
+			sa(stack);
+			rra(stack);
+		}
 	}
 }
 
