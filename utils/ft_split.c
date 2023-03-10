@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:34:42 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/19 17:32:38 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:29:56 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	**f(char const *s, char c, char **result, int words_count)
 	}
 	return (result);
 }
+//hey guys, did you now that in terms o
 
 char	**ft_split(char const *s, char c)
 {

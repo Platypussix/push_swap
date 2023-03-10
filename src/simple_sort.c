@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:20:50 by amedioun          #+#    #+#             */
-/*   Updated: 2023/03/08 13:25:33 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:06:39 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ static int	get_min(t_list **stack, int nb)
 	min = head->index;
 	while (head->next)
 	{
-		if (head->index < min && head->index != nb)
-			min = head->index;
 		head = head->next;
-		return (min);
+		if ((head->index < min) && head->index != nb)
+			min = head->index;
 	}
-	return (0);
+	return (min);
 }
 
 static void	sort_3(t_list **stack)
