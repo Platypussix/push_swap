@@ -6,30 +6,33 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:23:40 by amedioun          #+#    #+#             */
-/*   Updated: 2023/03/10 17:32:50 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/03/12 15:09:05 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdio.h>
 
-static t_list	*index_min(t_list **stack)
+static t_list	*get_next_min(t_list **stack)
 {
 	t_list	*head;
 	t_list	*min;
-	int		min_bool;
+	int		has_min;
 
 	min = NULL;
-	min_bool = 0;
+	has_min = 0;
 	head = *stack;
-	while (head->next)
+	if (head)
 	{
-		if ((head->index == -1) && (!min_bool || head->value < min->value))
+		while (head)
 		{
-			min = head;
-			min_bool = 1;
+			if ((head->index == -1) && (!has_min || head->value < min->value))
+			{
+				min = head;
+				has_min = 1;
+			}
+			head = head->next;
 		}
-		head = head->next;
 	}
 	return (min);
 }
@@ -40,13 +43,34 @@ void	get_index(t_list **stack)
 	int		index;
 
 	index = 0;
-	head = index_min(stack);
+	head = get_next_min(stack);
 	while (head)
 	{
 		head->index = index++;
-		head = index_min(stack);
+		head = get_next_min(stack);
 	}
 }
+
+// static t_list	*index_min(t_list **stack)
+// {
+// 	t_list	*head;
+// 	t_list	*min;
+// 	int		min_bool;
+
+// 	min = NULL;
+// 	min_bool = 0;
+// 	head = *stack;
+// 	while (head->next)
+// 	{
+// 		if ((head->index == -1) && (!min_bool || head->value < min->value))
+// 		{
+// 			min = head;
+// 			min_bool = 1;
+// 		}
+// 		head = head->next;
+// 	}
+// 	return (min);
+// }
 
 // void	get_index(t_list **stack)
 // {
