@@ -5,66 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 14:35:59 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/21 09:38:38 by amedioun         ###   ########.fr       */
+/*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
+/*   Updated: 2023/04/07 13:41:12 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_checkdouble(int nb, char **args, int i)
+static int	ft_contains(int num, char **argv, int i)
 {
 	i++;
-	while (args[i])
+	while (argv[i])
 	{
-		if (ft_atoi(args[i]) == nb)
+		if (ft_atoi(argv[i]) == num)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static int	ft_isnum(char *nb)
+static int	ft_isnum(char *num)
 {
 	int	i;
 
 	i = 0;
-	if (nb[0] == '-')
+	if (num[0] == '-')
 		i++;
-	while (nb[i])
+	while (num[i])
 	{
-		if (!ft_isdigit(nb[i]))
+		if (!ft_isdigit(num[i]))
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-void	ft_argcheck(int ac, char **av)
+void	ft_check_args(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
-	char	**args;
+	char	**args;	
 
 	i = 0;
-	if (ac == 2)
-		args = ft_split(av[1], ' ');
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
 	else
 	{
 		i = 1;
-		args = av;
+		args = argv;
 	}
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
 			ft_error();
-		if (tmp < -2147483648 || tmp > 2147483647)
+		if (ft_contains(tmp, args, i))
 			ft_error();
-		if (ft_checkdouble(tmp, args, i))
+		if (tmp < -2147483648 || tmp > 2147483647)
 			ft_error();
 		i++;
 	}
-	if (ac == 2)
+	if (argc == 2)
 		ft_free(args);
 }

@@ -6,13 +6,13 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:34:42 by amedioun          #+#    #+#             */
-/*   Updated: 2023/03/10 16:29:56 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:06:50 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -28,7 +28,7 @@ int	word_count(char const *s, char c)
 	return (count);
 }
 
-int	word_length(char const *s, char c)
+static int	word_length(char const *s, char c)
 {
 	int	i;
 	int	len;
@@ -43,7 +43,7 @@ int	word_length(char const *s, char c)
 	return (len);
 }
 
-char	**f(char const *s, char c, char **result, int words_count)
+static char	**f(char const *s, char c, char **result, int words_count)
 {
 	int	i;
 	int	j;
@@ -71,7 +71,6 @@ char	**f(char const *s, char c, char **result, int words_count)
 	}
 	return (result);
 }
-//hey guys, did you now that in terms o
 
 char	**ft_split(char const *s, char c)
 {

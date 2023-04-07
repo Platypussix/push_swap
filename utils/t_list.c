@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_lists.c                                      :+:      :+:    :+:   */
+/*   t_list.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 15:39:03 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/21 10:32:43 by amedioun         ###   ########.fr       */
+/*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
+/*   Updated: 2023/04/07 13:26:21 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstnew(int value, int ac)
+// Creates new node and returns the pointer of it
+t_list	*ft_lstnew(int value)
 {
 	t_list	*new;
 
@@ -21,17 +22,18 @@ t_list	*ft_lstnew(int value, int ac)
 		return (NULL);
 	new->value = value;
 	new->index = -1;
-	new->ac = ac;
 	new->next = NULL;
 	return (new);
 }
 
+// Adds the specified node to a stack (list) making it the head
 void	ft_lstadd_front(t_list **stack, t_list *new)
 {
 	new->next = *stack;
 	*stack = new;
 }
 
+// Returns the last node of a list 
 t_list	*ft_lstlast(t_list *head)
 {
 	t_list	*tmp;
@@ -46,6 +48,7 @@ t_list	*ft_lstlast(t_list *head)
 	return (tmp);
 }
 
+// Adds the specified node to a stack (list) making it the last node
 void	ft_lstadd_back(t_list **stack, t_list *new)
 {
 	t_list	*n;
@@ -63,6 +66,7 @@ void	ft_lstadd_back(t_list **stack, t_list *new)
 	}
 }
 
+// Returns the size of the Linked List
 int	ft_lstsize(t_list *head)
 {
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:06:47 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/21 10:28:52 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:43:09 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_free(char **str)
 		free(str[i--]);
 }
 
-void	freestack(t_list **stack)
+void	free_stack(t_list **stack)
 {
 	t_list	*head;
 	t_list	*tmp;
