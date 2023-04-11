@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:20:22 by amedioun          #+#    #+#             */
-/*   Updated: 2023/02/21 10:47:59 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/04/11 11:50:19 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	push(t_list **stack_dest, t_list **stack_src)
 	{
 		head_dest = tmp;
 		head_dest->next = NULL;
-		*stack_src = head_dest;
+		*stack_dest = head_dest;
 	}
 	else
 	{
