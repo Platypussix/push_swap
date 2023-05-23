@@ -6,7 +6,7 @@
 /*   By: amedioun <amedioun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
-/*   Updated: 2023/04/07 15:20:08 by amedioun         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:22:22 by amedioun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,16 @@ void	make_top(t_list **stack, int distance)
 	{
 		while (tmp-- > 0)
 			rra(stack);
+	}
+}
+
+void	sort_3_norme(t_list *head, t_list **stack_a, int min)
+{
+	if (head->next->index == min)
+		ra(stack_a);
+	else
+	{
+		sa(stack_a);
+		rra(stack_a);
 	}
 }
